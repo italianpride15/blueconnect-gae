@@ -1,0 +1,1 @@
+class BlueConnectProfessional(BaseProfile, BaseDatastore):

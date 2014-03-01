@@ -1,0 +1,2 @@
+class BlueConnectFriend(BaseProfile, BaseDatastore):
+	
