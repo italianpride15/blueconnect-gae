@@ -17,7 +17,7 @@ class ProfileFactory():
 		Do NOT instanciate classes manually! Use this 
 		factory method to create them."""
 	@staticmethod
-	def factory(profile_type, object):
+	def factory(profile_type, profile_dict):
 		#key for now: change to random code generator like in 2-step auth
 		key = 'UrbcO4iQyvVk40xbY1rRKWeJ6UpPd5mg39L5FvrbBHeVGNc4Fy'
 
@@ -26,8 +26,8 @@ class ProfileFactory():
 
 		if len(profile_type) > 10:
 			profile_type = ProfileFactory.decrypt_profile_type(profile_type, key)
-		if profile_type == "Facebook": return FacebookProfile(object)
-		if profile_type == "Linkedin": return LinkedinProfile(object)
-		if profile_type == "BCFrd": return BlueConnectFriend(object) 
-		if profile_type == "BCPro": return BlueConnectProfessional(object)
+		if profile_type == "Facebook": return FacebookProfile(profile_dict)
+		if profile_type == "Linkedin": return LinkedinProfile(profile_dict)
+		if profile_type == "BCFrd": return BlueConnectFriend(profile_dict) 
+		if profile_type == "BCPro": return BlueConnectProfessional(profile_dict)
 		else: raise TypeError("Invalid Profile Type")

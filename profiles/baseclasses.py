@@ -3,7 +3,7 @@ import abc
 
 """Base Class for the creation
 	of Profiles types"""
-class BaseProfile(object):
+class BaseProfile(profile_dict):
 	__metaclass__  = abc.ABCMeta
 
 """Base Class for performing datastore 
