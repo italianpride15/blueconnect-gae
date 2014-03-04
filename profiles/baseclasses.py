@@ -1,4 +1,3 @@
-#http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Factory.html#preventing-direct-creation
 import abc
 
 """Base Class for the creation
@@ -10,22 +9,23 @@ class BaseProfile(profile_dict):
 	operations on Profile Classes"""
 class BaseDatastore():
 	__metaclass__  = abc.ABCMeta
-
-	#maybe __init__ with cls so can call self. for each function
 	
-	#general implementation so can call super 
+	"""Profile creates a new instance of itself."""
 	@abc.abstractmethod
 	def post_profile(cls):
-		"""Profile creates a new instance of itself."""
-	
+		#general implementation for super call 
+
+	"""Profile returns itself."""
 	@abc.abstractmethod
 	def get_profile(cls):
-		"""Profile returns itself."""
+		#general implementation for super call  
 
+	"""Profile updates itself."""
 	@abc.abstractmethod
 	def put_profile(cls):
-		"""Profile updates itself."""
+		#general implementation for super call 
 
+	"""Profile deletes itself."""
 	@abc.abstractmethod
 	def delete_profile(cls):
-		"""Profile deletes itself."""
+		#general implementation for super call  

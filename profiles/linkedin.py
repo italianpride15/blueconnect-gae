@@ -25,19 +25,26 @@ class LinkedinProfile(BaseProfile, BaseDatastore):
 		self.about = profile_dict['about']
 		self.approach_status = profile_dict['approach_status']
 
+	"""Following functions are implemented from 
+		BaseDatastore with super() implementation.
+		See baseclass for general implementation."""
+
+	"""Insert concrete implementation documentation"""
 	@classmethod
 	def post_profile(self):
-		"""Profile creates a new instance of itself."""
-
+		super(LinkedinProfile, self).post_profile()
+	
+	"""Insert concrete implementation documentation"""
 	@classmethod
 	def get_profile(self):
-		"""Profile returns itself."""
+		super(LinkedinProfile, self).get_profile()
 
+	"""Insert concrete implementation documentation"""
 	@classmethod
 	def put_profile(self):
-		"""Profile updates itself."""
+		super(LinkedinProfile, self).put_profile()
 
+	"""Insert concrete implementation documentation"""
 	@classmethod
 	def delete_profile(self):
-		"""Profile deletes itself."""
-		#super(FacebookProfile, self).delete_profile()
+		super(LinkedinProfile, self).delete_profile()

@@ -13,18 +13,17 @@ class ProfileFactory():
 		profile_type = decrypt(key, cipher)
 		return profile_type.decode('utf8')
 
-	"""Factory * Design Pattern for creating Profiles. 
-		Do NOT instanciate classes manually! Use this 
-		factory method to create them."""
+	"""Abstract Factory Design Pattern for creating Profiles. Do NOT 
+		instanciate classes manually! Use the factory method to create them."""
 	@staticmethod
-	def factory(profile_type, profile_dict):
+	def factory(profile_cipher, profile_dict):
 		#key for now: change to random code generator like in 2-step auth
 		key = 'UrbcO4iQyvVk40xbY1rRKWeJ6UpPd5mg39L5FvrbBHeVGNc4Fy'
 
 		#delete after testing encryption
-		profile_type = encrypt(key, profile_type.encode('utf8'))
+		profile_type = encrypt(key, profile_cipher.encode('utf8'))
 
-		if len(profile_type) > 10:
+		if len(profile_type) > 10: #temp way of checking if type is encrypted
 			profile_type = ProfileFactory.decrypt_profile_type(profile_type, key)
 		if profile_type == "Facebook": return FacebookProfile(profile_dict)
 		if profile_type == "Linkedin": return LinkedinProfile(profile_dict)
