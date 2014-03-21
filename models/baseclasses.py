@@ -20,27 +20,27 @@ class BaseDatastore():
 	
 	"""Profile creates a new instance of itself."""
 	@abc.abstractmethod
-	def post_profile():
+	def post_profile(self):
 		#general implementation for super call 
 		last_modified = datetime.datetime.now().datetime()
 		self.put()
 
 	"""Profile returns itself."""
 	@abc.abstractmethod
-	def get_profile():
+	def get_profile(self):
 		#general implementation for super call  
 		#self.toJSON()
 		pass
 
 	"""Profile updates itself."""
 	@abc.abstractmethod
-	def put_profile():
+	def put_profile(self):
 		#general implementation for super call
 		last_modified = datetime.datetime.now().datetime()
 		self.put() 
 
 	"""Profile deletes itself."""
 	@abc.abstractmethod
-	def delete_profile():
+	def delete_profile(self):
 		#general implementation for super call 
 		self.key.delete() 
