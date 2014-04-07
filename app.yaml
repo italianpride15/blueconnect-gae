@@ -5,11 +5,16 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: .*
-  script: main.app
+# Endpoints handler
+- url: /_ah/spi/.*
+  script: blueconnect_api.app
 
 libraries:
 - name: webapp2
   version: latest
 - name: jinja2
   version: latest
+- name: pycrypto
+  version: latest
+- name: endpoints
+  version: 1.0

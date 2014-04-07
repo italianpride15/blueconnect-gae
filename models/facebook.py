@@ -1,30 +1,31 @@
 from baseclasses import BaseProfile
 from baseclasses import BaseDatastore
+from google.appengine.ext import ndb
 
 class FacebookProfile(BaseProfile, BaseDatastore):
 
-	#let every field be indexed by default for querys
-	self.email = nbd.StringProperty()
-	self.full_name = nbd.StringProperty()
-	self.qualities = nbd.StringProperty() #list
-	self.connections = nbd.StringProperty() #list and call GQL CONTAINS #look into ReferenceProperty()
-	self.address = nbd.StringProperty()
-	self.curr_classes = nbd.StringProperty() #list, edu only
-	self.past_classes = nbd.StringProperty() #list, linkedin/old edu
-	self.major = nbd.StringProperty()
-	self.minor = nbd.StringProperty()
-	self.graduation = nbd.StringProperty()
-	self.curr_college = nbd.StringProperty()
-	self.past_colleges = nbd.StringProperty() #list
-	self.highschool = nbd.StringProperty()
-	self.profile_picture = nbd.BlobProperty() #default not indexed
-	self.curr_job = nbd.StringProperty()
-	self.past_job = nbd.StringProperty()
-	self.about = nbd.TextProperty() #default not indexed
-	self.approach_status = nbd.StringProperty()
+	"""#let every field be indexed by default for querys
+	self.email = ndb.StringProperty()
+	self.full_name = ndb.StringProperty()
+	self.qualities = ndb.StringProperty() #list
+	self.connections = ndb.StringProperty() #list and call GQL CONTAINS #look into ReferenceProperty()
+	self.address = ndb.StringProperty()
+	self.curr_classes = ndb.StringProperty() #list, edu only
+	self.past_classes = ndb.StringProperty() #list, linkedin/old edu
+	self.major = ndb.StringProperty()
+	self.minor = ndb.StringProperty()
+	self.graduation = ndb.StringProperty()
+	self.curr_college = ndb.StringProperty()
+	self.past_colleges = ndb.StringProperty() #list
+	self.highschool = ndb.StringProperty()
+	self.profile_picture = ndb.BlobProperty() #default not indexed
+	self.curr_job = ndb.StringProperty()
+	self.past_job = ndb.StringProperty()
+	self.about = ndb.TextProperty() #default not indexed
+	self.approach_status = ndb.StringProperty()"""
 
 	def __init__(self, profile_dict):
-		self.key = nbd.Key(profile_dict['profile_type'], profile_dict['email'])
+		self.key = ndb.Key(profile_dict['profile_type'], profile_dict['email'])
 		self.username = profile_dict['email']
 		self.profile_type = profile_dict['profile_type']
 		self.email = profile_dict['email']

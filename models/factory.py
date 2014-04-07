@@ -2,16 +2,16 @@ from facebook import FacebookProfile
 from linkedin import LinkedinProfile
 from bcfriend import BlueConnectFriend
 from bcprofessional import BlueConnectProfessional
-from authentication import Authentication
+#from helpers.authentication import Authentication
 
 class ProfileFactory():
 
 	"""Abstract Factory Design Pattern for creating Profiles. Do NOT 
 		instanciate classes manually! Use the register method to create them."""
 	@staticmethod
-	def register(profile_cipher, profile_dict):
+	def register(profile_type, profile_dict):
 		
-		profile_type = Authentication.decrypt_profile_type(profile_type)
+		#profile_type = Authentication.decrypt_profile_type(profile_cipher)
 
 		"""This code block will update info from external service (Facebook,
 			Linkedin, etc) using token or refresh token"""
